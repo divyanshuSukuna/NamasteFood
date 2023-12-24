@@ -19,6 +19,7 @@
   padding: 0px 20px;
   margin: 0px 15px;
   list-style-type: none;
+  cursor: pointer;
 }
 
 .search {
@@ -27,6 +28,7 @@
 
 .res-card {
   background-color: #f0f0f0;
+  border: 1px solid transparent;
   padding: 5px;
   width: 200px;
 }
@@ -46,12 +48,16 @@
   flex-wrap: wrap;
   padding: 0px 20px;
   gap: 20px;
-  justify-content: center;
+  justify-content: left;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
 }
 
 .filter-btn {
   margin: 10px;
-  padding: 5px;
   cursor: pointer;
 }
 
@@ -69,4 +75,5 @@
 
 .login-btn {
   padding: 10px;
+  cursor: pointer;
 }
