@@ -41,7 +41,7 @@ const Body = () => {
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body px-20">
+    <div className="body mx-40">
       <div className="filter flex gap-10 justify-start py-10">
         <div className="search flex gap-10">
           <input
@@ -79,7 +79,7 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <div className="res-container flex flex-wrap gap-6 mb-10">
+      <div className="res-container flex flex-wrap gap-x-10 gap-y-5 mb-10">
         {filteredRestaurant.map((restaurant) => (
           <Link
             className="card-link"

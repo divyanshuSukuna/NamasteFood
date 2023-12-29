@@ -19,11 +19,11 @@ const RestaurantMenu = () => {
   console.log(itemCards);
 
   return (
-    <div className="menu">
-      <h1>{name}</h1>
-      <h3>{cuisines.join(", ")}</h3>
-      <h3>{costForTwoMessage}</h3>
-      <h2>Menu</h2>
+    <div className="menu flex-col mx-40 my-20">
+      <h1 className="res-name text-2xl font-bold pb-5">{name}</h1>
+      <h3 className="cusines text-lg font-semibold ">{cuisines.join(", ")}</h3>
+      <h3 className="cost-two text-lg font-semibold">{costForTwoMessage}</h3>
+      <h2 className="pt-10 text-lg font-semibold">Menu</h2>
       <ul>
         {itemCards.map((item) => (
           <li key={item.card.info.id}>
