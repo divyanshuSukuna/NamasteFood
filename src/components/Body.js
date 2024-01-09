@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
@@ -23,11 +23,11 @@ const Body = () => {
     const json = await data.json();
 
     setListOfRestaurants(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+      json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants
     );
 
     setFilteredRestaurants(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+      json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants
     );
   };
 
@@ -37,6 +37,8 @@ const Body = () => {
     return (
       <h1>Internet not working. Please check your internet connection!</h1>
     );
+
+  const RestaurantCardWithLabel = withPromotedLabel(RestaurantCard);
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
@@ -86,6 +88,8 @@ const Body = () => {
             to={"/restaurant/" + restaurant.info.id}
             key={restaurant.info.id}
           >
+            {/*can't produce RestaurantCardPromoted because there isn't any
+            promoted property returning from the API.*/}
             <RestaurantCard resData={restaurant} />
           </Link>
         ))}
